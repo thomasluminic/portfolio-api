@@ -8,8 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @ApiResource
  */
 class User implements UserInterface
 {
@@ -39,32 +39,22 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $phone;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $age;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $lastName;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $tel;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $location;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $postalCode;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $age;
+    private $lastname;
 
     public function getId(): ?int
     {
@@ -144,6 +134,30 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getAge(): ?string
+    {
+        return $this->age;
+    }
+
+    public function setAge(string $age): self
+    {
+        $this->age = $age;
+
+        return $this;
+    }
+
     public function getFirstName(): ?string
     {
         return $this->firstName;
@@ -156,62 +170,14 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getLastName(): ?string
+    public function getLastname(): ?string
     {
-        return $this->lastName;
+        return $this->lastname;
     }
 
-    public function setLastName(string $lastName): self
+    public function setLastname(string $lastname): self
     {
-        $this->lastName = $lastName;
-
-        return $this;
-    }
-
-    public function getTel(): ?int
-    {
-        return $this->tel;
-    }
-
-    public function setTel(int $tel): self
-    {
-        $this->tel = $tel;
-
-        return $this;
-    }
-
-    public function getLocation(): ?string
-    {
-        return $this->location;
-    }
-
-    public function setLocation(string $location): self
-    {
-        $this->location = $location;
-
-        return $this;
-    }
-
-    public function getPostalCode(): ?string
-    {
-        return $this->postalCode;
-    }
-
-    public function setPostalCode(string $postalCode): self
-    {
-        $this->postalCode = $postalCode;
-
-        return $this;
-    }
-
-    public function getAge(): ?\DateTimeInterface
-    {
-        return $this->age;
-    }
-
-    public function setAge(\DateTimeInterface $age): self
-    {
-        $this->age = $age;
+        $this->lastname = $lastname;
 
         return $this;
     }
