@@ -27,7 +27,7 @@ class Formation
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $entreprise;
+    private $society;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -66,14 +66,14 @@ class Formation
         return $this;
     }
 
-    public function getEntreprise(): ?string
+    public function getSociety(): ?string
     {
-        return $this->entreprise;
+        return $this->society;
     }
 
-    public function setEntreprise(string $entreprise): self
+    public function setSociety(string $society): self
     {
-        $this->entreprise = $entreprise;
+        $this->society = $society;
 
         return $this;
     }
