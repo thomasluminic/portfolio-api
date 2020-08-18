@@ -4,6 +4,7 @@ namespace App\Service\Mailing;
 
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 
@@ -11,7 +12,7 @@ class MailingService
 {
     private MailerInterface $mailer;
 
-    public function __construct( MailerInterface $mailer) {
+    public function __construct(MailerInterface $mailer) {
         $this->mailer = $mailer;
     }
 
