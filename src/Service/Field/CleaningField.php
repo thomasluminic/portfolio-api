@@ -3,11 +3,12 @@
 namespace App\Service\Field;
 
 
+use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 
 class CleaningField
 {
-    public function hasAllContactFields(Request $form): ?array
+    public function hasAllContactFields(ParameterBag $form): ?array
     {
         $message = [];
         if (!$form->has('firstname')) {
