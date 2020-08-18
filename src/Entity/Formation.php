@@ -17,37 +17,37 @@ class Formation
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $society;
+    private string $society;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $location;
+    private string $location;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $dateStart;
+    private string $dateStart;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $dateEnd;
+    private \DateTime $dateEnd;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $qualification;
+    private string $qualification;
 
     public function getId(): ?int
     {

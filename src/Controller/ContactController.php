@@ -15,6 +15,7 @@ class ContactController extends AbstractController
      * @Route("/contact", name="contact", methods={"POST"})
      * @param Request $request
      * @param MailingService $mailing
+     * @param CleaningField $cleaningField
      * @return JsonResponse
      */
     public function index(Request $request, MailingService $mailing, CleaningField $cleaningField): JsonResponse
@@ -22,7 +23,7 @@ class ContactController extends AbstractController
         $form = $request->request;
         $errorMessage = $cleaningField->hasAllContactFields($form);
         if (!$errorMessage) {
-            $form = $cleaningField->cleaningFields($form);
+            $form = $cleaningField->cleaningFields($form->all());
             return $mailing->sendEmail($form);
         } else {
             return new JsonResponse($errorMessage, 400);

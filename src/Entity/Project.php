@@ -17,33 +17,43 @@ class Project
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private string $title;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $images;
+    private string $images;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $link;
+    private string $link;
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getTitle(): ?string
     {
         return $this->title;
     }
 
+    /**
+     * @param string $title
+     * @return $this
+     */
     public function setTitle(string $title): self
     {
         $this->title = $title;
@@ -51,11 +61,18 @@ class Project
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getImages(): ?string
     {
         return $this->images;
     }
 
+    /**
+     * @param string $images
+     * @return $this
+     */
     public function setImages(string $images): self
     {
         $this->images = $images;
@@ -63,11 +80,18 @@ class Project
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getLink(): ?string
     {
         return $this->link;
     }
 
+    /**
+     * @param string $link
+     * @return $this
+     */
     public function setLink(string $link): self
     {
         $this->link = $link;
