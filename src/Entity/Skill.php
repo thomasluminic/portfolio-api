@@ -17,28 +17,38 @@ class Skill
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private int $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $logo;
+    private int $logo;
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
+    /**
+     * @return string|null
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     * @return $this
+     */
     public function setName(string $name): self
     {
         $this->name = $name;
@@ -46,11 +56,18 @@ class Skill
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getLogo(): ?string
     {
         return $this->logo;
     }
 
+    /**
+     * @param string $logo
+     * @return $this
+     */
     public function setLogo(string $logo): self
     {
         $this->logo = $logo;

@@ -1,12 +1,13 @@
 <?php
 
-
 namespace App\Service\Field;
 
 
+use Symfony\Component\HttpFoundation\Request;
+
 class CleaningField
 {
-    public function hasAllContactFields($form): ?array
+    public function hasAllContactFields(Request $form): ?array
     {
         $message = [];
         if (!$form->has('firstname')) {
@@ -24,7 +25,7 @@ class CleaningField
         return $message;
     }
 
-    public function cleaningFields($form): array
+    public function cleaningFields(array $form): array
     {
         $cleaningForm = [];
         foreach ($form as $key => $value) {

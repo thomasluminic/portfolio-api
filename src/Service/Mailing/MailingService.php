@@ -11,7 +11,7 @@ class MailingService
 {
     private MailerInterface $mailer;
 
-    public function __construct( MailerInterface $mailer) {
+    public function __construct(MailerInterface $mailer) {
         $this->mailer = $mailer;
     }
 
