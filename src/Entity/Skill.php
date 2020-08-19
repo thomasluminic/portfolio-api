@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\SkillRepository;
 use Doctrine\ORM\Mapping as ORM;
@@ -22,12 +23,12 @@ class Skill
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private int $name;
+    private string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private int $logo;
+    private string $logo;
 
     /**
      * @return int|null

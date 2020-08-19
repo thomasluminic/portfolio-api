@@ -4,10 +4,13 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\FormationRepository;
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
+ * @ApiFilter(OrderFilter::class, properties={"dateEnd"}, arguments={"orderParameterName"="order"})
  * @ORM\Entity(repositoryClass=FormationRepository::class)
  */
 class Formation
@@ -37,7 +40,7 @@ class Formation
     /**
      * @ORM\Column(type="datetime")
      */
-    private string $dateStart;
+    private \DateTime $dateStart;
 
     /**
      * @ORM\Column(type="datetime")
